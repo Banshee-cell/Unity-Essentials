@@ -19,4 +19,9 @@ public float rotationSpeed;
     transform.Rotate(0, rotationSpeed, 0);
         
     }
+
+   private void OnTriggerEnter(Collider other) {
+    //Destroy the Collectible
+
+   }
 }
