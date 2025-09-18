@@ -5,6 +5,7 @@ public class Collectible : MonoBehaviour
 
 
 public float rotationSpeed;
+public GameObject onCollectEffect;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +22,14 @@ public float rotationSpeed;
     }
 
    private void OnTriggerEnter(Collider other) {
-    //Destroy the Collectible
+   
 
+   if (other.CompareTag("Player")){
+       //Destroy the Collectible
+   Destroy(gameObject);
+   // instantiate the particle affect
+   Instantiate(onCollectEffect, transform.position, transform.rotation);
+   }
+   
    }
 }
